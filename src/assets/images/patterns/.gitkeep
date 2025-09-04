@@ -1,0 +1,6 @@
+# This file ensures the patterns directory is tracked by git
+# Add your pattern images here:
+# - hero-pattern.png (main hero section pattern)
+# - hero-pattern.svg (vector version, recommended)
+# - pattern-dots.png (dotted pattern)
+# - pattern-lines.png (line pattern)

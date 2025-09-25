@@ -21,7 +21,7 @@ export function Header() {
         <div className="header-content">
           <Link to="/" className="logo">
             <img 
-              src="/src/assets/logo/Bake+&+Che.webp" 
+              src="/images/logo.webp" 
               alt="Bake And Che" 
               className="logo-image"
               onError={(e) => {

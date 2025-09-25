@@ -10,7 +10,11 @@
     "preview": "vite preview",
     "setup": "node setup-env.js",
     "deploy": "node deploy.js",
-    "deploy:vercel": "vercel --prod"
+    "deploy:vercel": "vercel --prod",
+    "auto-commit": "node auto-commit.js",
+    "save": "node quick-save.js",
+    "smart": "node smart-commit.js",
+    "commit": "node auto-commit.js"
   },
   "dependencies": {
     "lucide-react": "^0.294.0",

@@ -1,4 +1,4 @@
-import { MapPin, Clock, Phone, Mail, Car, Users, Wifi } from 'lucide-react'
+// No imports needed for this component
 import { StoreLocator } from '../components/features/StoreLocator'
 
 export function Location() {

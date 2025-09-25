@@ -1,4 +1,4 @@
-import { ArrowRight, Coffee, Star } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 
 export function Hero() {
   return (

@@ -1,23 +1,38 @@
-# Ignore local development files
-node_modules/
+node_modules
+.env
 .env.local
 .env.development.local
 .env.test.local
 .env.production.local
-
-# Ignore build artifacts that shouldn't be deployed
-dist/
-build/
-
-# Ignore IDE files
-.vscode/
-.idea/
-*.swp
-*.swo
-
-# Ignore OS files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 .DS_Store
-Thumbs.db
-
-# Ensure only GitHub deployments
-# This file ensures Vercel only deploys from GitHub repository
+.vscode
+.idea
+*.log
+coverage
+.nyc_output
+.cache
+dist
+build
+.next
+.nuxt
+.vuepress/dist
+.serverless
+.fusebox
+.dynamodb
+.tern-port
+.vscode-test
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+.pnp.*
+auto-commit.js
+quick-save.js
+smart-commit.js
+deploy.js
+setup-env.js
+AUTO-COMMIT.md
+MAPBOX_SETUP.md

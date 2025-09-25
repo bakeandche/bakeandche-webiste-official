@@ -1,4 +1,4 @@
-import { Clock, Heart, Award, Coffee } from 'lucide-react'
+// No imports needed for this component
 
 export function Features() {
   const features = [

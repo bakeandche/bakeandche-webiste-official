@@ -1,0 +1,23 @@
+# Ignore local development files
+node_modules/
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Ignore build artifacts that shouldn't be deployed
+dist/
+build/
+
+# Ignore IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Ignore OS files
+.DS_Store
+Thumbs.db
+
+# Ensure only GitHub deployments
+# This file ensures Vercel only deploys from GitHub repository

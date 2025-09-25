@@ -1,51 +1,118 @@
 import { Star, Clock, DollarSign } from 'lucide-react'
 
 export function Menu() {
+  // Function to split dessert name into two lines
+  const splitDessertName = (name) => {
+    const match = name.match(/^(.+?)\s*\((.+?)\)$/);
+    if (match) {
+      return {
+        english: match[1].trim(),
+        vietnamese: `(${match[2].trim()})`
+      };
+    }
+    return {
+      english: name,
+      vietnamese: ''
+    };
+  };
+
   const menuCategories = [
     {
-      name: "Fresh Breads",
+      name: "DESSERT | CHÈ",
       items: [
-        { name: "Artisan Sourdough", price: 6.50, description: "Traditional sourdough with a perfect crust", popular: true },
-        { name: "Whole Wheat Loaf", price: 5.25, description: "Nutty and hearty, perfect for sandwiches" },
-        { name: "French Baguette", price: 4.75, description: "Crispy exterior, soft interior" },
-        { name: "Multigrain Bread", price: 6.00, description: "Packed with seeds and grains" }
+        { name: "HOUSE SPECIAL (CHÈ ĐẶC BIỆT)", price: 7.50, description: "Chè đặc biệt với nhiều lớp hương vị", popular: true },
+        { name: "THREE COLORS (CHÈ BA MÀU)", price: 6.75, description: "Chè ba màu truyền thống với đậu đỏ" },
+        { name: "PANDAN GRASS JELLY (SƯƠNG SÁO BÁNH LỌT)", price: 6.25, description: "Sương sáo lá dứa với bánh lọt" },
+        { name: "SMASHED COCONUT (DỪA DẦM THỐT NỐT)", price: 8.00, description: "Dừa dầm với thốt nốt tươi" },
+        { name: "AVOCADO (CHÈ BƠ)", price: 5.50, description: "Chè bơ với sữa dừa và sữa đặc" },
+        { name: "PREMIUM SOY PUDDING (ĐẬU HỦ ĐẶC BIỆT)", price: 6.00, description: "Đậu hủ đặc biệt với nước đường" },
+        { name: "THAI DESSERT (CHÈ THÁI)", price: 5.75, description: "Chè Thái với nhiều loại thạch" },
+        { name: "LONGAN ALOE VERA (CHÈ NHÂN NHỤC)", price: 4.50, description: "Chè nhãn nhục với nha đam" }
       ]
     },
     {
-      name: "Pastries & Croissants",
+      name: "JELLY | RAU CÂU",
       items: [
-        { name: "Butter Croissant", price: 3.50, description: "Flaky, buttery perfection", popular: true },
-        { name: "Chocolate Croissant", price: 4.25, description: "Rich chocolate filling in flaky pastry" },
-        { name: "Almond Croissant", price: 4.75, description: "Toasted almonds and almond cream" },
-        { name: "Pain au Chocolat", price: 4.00, description: "Classic French chocolate pastry" }
+        { name: "COCONUT JELLY (RAU CÂU DỪA)", price: 4.50, description: "Rau câu dừa tươi với nước cốt dừa", popular: true },
+        { name: "PANDAN JELLY (RAU CÂU LÁ DỨA)", price: 4.25, description: "Rau câu lá dứa thơm ngon" },
+        { name: "COFFEE JELLY (RAU CÂU CÀ PHÊ)", price: 4.75, description: "Rau câu cà phê đậm đà" },
+        { name: "MIXED JELLY (RAU CÂU HỖN HỢP)", price: 5.00, description: "Rau câu nhiều màu sắc" }
       ]
     },
     {
-      name: "Cakes & Desserts",
+      name: "BAKE | BÁNH",
       items: [
-        { name: "Chocolate Cake Slice", price: 5.50, description: "Rich chocolate cake with ganache", popular: true },
-        { name: "Cheesecake", price: 6.25, description: "New York style with berry compote" },
-        { name: "Tiramisu", price: 6.75, description: "Classic Italian dessert" },
-        { name: "Lemon Tart", price: 5.00, description: "Tangy lemon curd in buttery crust" }
+        { name: "BÁNH FLAN (CARAMEL CUSTARD)", price: 5.50, description: "Bánh flan truyền thống với caramel", popular: true },
+        { name: "BÁNH BÔNG LAN (SPONGE CAKE)", price: 6.25, description: "Bánh bông lan mềm mịn" },
+        { name: "BÁNH TIRAMISU", price: 6.75, description: "Bánh tiramisu kiểu Ý" },
+        { name: "BÁNH TART CHANH (LEMON TART)", price: 5.00, description: "Bánh tart chanh chua ngọt" },
+        { name: "BÁNH CHEESECAKE", price: 6.50, description: "Bánh cheesecake phong cách New York" },
+        { name: "BÁNH CHOCOLATE", price: 5.75, description: "Bánh chocolate đậm đà" },
+        { name: "BÁNH RED VELVET", price: 6.00, description: "Bánh red velvet với kem phô mai" },
+        { name: "BÁNH CARROT CAKE", price: 5.25, description: "Bánh carrot cake với hạt óc chó" }
       ]
     },
     {
-      name: "Cookies & Treats",
+      name: "MIX & MATCH",
+      type: "custom",
       items: [
-        { name: "Chocolate Chip Cookie", price: 2.50, description: "Soft and chewy with premium chocolate", popular: true },
-        { name: "Macarons (6 pack)", price: 12.00, description: "Assorted flavors, made daily" },
-        { name: "Brownie", price: 3.25, description: "Fudgy and rich" },
-        { name: "Cinnamon Roll", price: 4.50, description: "Fresh baked with cream cheese frosting" }
+        { name: "8 pcs", price: 0, description: "Custom selection" },
+        { name: "12 pcs", price: 0, description: "Custom selection" },
+        { name: "20 pcs", price: 0, description: "Custom selection" },
+        { name: "30 pcs", price: 0, description: "Custom selection" },
+        { name: "50 pcs", price: 0, description: "Custom selection" },
+        { name: "100 pcs", price: 0, description: "Custom selection" }
       ]
     },
     {
-      name: "Beverages",
+      name: "PRESELECT GIFTBOX",
+      type: "preselect",
       items: [
-        { name: "Fresh Coffee", price: 2.75, description: "Locally roasted, freshly brewed" },
-        { name: "Espresso", price: 2.25, description: "Rich and bold" },
-        { name: "Cappuccino", price: 3.50, description: "Perfect foam and balance" },
-        { name: "Hot Chocolate", price: 3.25, description: "Rich and creamy" },
-        { name: "Fresh Juice", price: 4.00, description: "Orange, apple, or mixed berry" }
+        { 
+          name: "5 CAKES - THE SAMPLE", 
+          price: 0, 
+          description: "All cakes selection Cannot be changed or substituted",
+          cakes: [
+            { name: "Palm Sugar", quantity: 1, color: "#8B4513" },
+            { name: "Pandan Layers", quantity: 1, color: "#FFD700" },
+            { name: "Mung Bean", quantity: 1, color: "#D2B48C" },
+            { name: "Cassava", quantity: 1, color: "#FFA500" },
+            { name: "Taro", quantity: 1, color: "#90EE90" }
+          ]
+        },
+        { 
+          name: "8 CAKES - THE TOP SELLER", 
+          price: 0, 
+          description: "All cakes selection Cannot be changed or substituted",
+          cakes: [
+            { name: "Palm Sugar", quantity: 4, color: "#8B4513" },
+            { name: "Pandan Layers", quantity: 4, color: "#90EE90" }
+          ]
+        },
+        { 
+          name: "12 CAKES - THE SAMPLE", 
+          price: 0, 
+          description: "All cakes selection Cannot be changed or substituted",
+          cakes: [
+            { name: "Palm Sugar", quantity: 4, color: "#8B4513" },
+            { name: "Pandan Layers", quantity: 2, color: "#90EE90" },
+            { name: "Mung Bean", quantity: 2, color: "#D2B48C" },
+            { name: "Cassava", quantity: 2, color: "#FFA500" },
+            { name: "Taro", quantity: 2, color: "#FFD700" }
+          ]
+        },
+        { 
+          name: "30 CAKES - XLARGE GIFTBOX", 
+          price: 0, 
+          description: "All cakes selection Cannot be changed or substituted",
+          cakes: [
+            { name: "Palm Sugar", quantity: 10, color: "#8B4513" },
+            { name: "Pandan Layers", quantity: 5, color: "#90EE90" },
+            { name: "Mung Bean", quantity: 5, color: "#D2B48C" },
+            { name: "Cassava", quantity: 5, color: "#FFA500" },
+            { name: "Taro", quantity: 5, color: "#FFD700" }
+          ]
+        }
       ]
     }
   ]
@@ -68,20 +135,86 @@ export function Menu() {
         {menuCategories.map((category, index) => (
           <section key={index} className="menu-category">
             <h2 className="category-title">{category.name}</h2>
-            <div className="menu-items">
-              {category.items.map((item, itemIndex) => (
-                <div key={itemIndex} className="menu-item">
-                  <div className="item-header">
-                    <h3 className="item-name">
-                      {item.name}
-                      {item.popular && <Star className="popular-icon" />}
-                    </h3>
-                    <span className="item-price">${item.price.toFixed(2)}</span>
+            {category.name === "DESSERT | CHÈ" || category.name === "JELLY | RAU CÂU" || category.name === "BAKE | BÁNH" ? (
+              <div className="dessert-cards-grid">
+                {category.items.map((item, itemIndex) => (
+                  <div key={itemIndex} className="dessert-card">
+                    <div className="dessert-photo-placeholder">
+                      <div className="photo-placeholder-icon">📸</div>
+                      <p className="photo-placeholder-text">Photo Placeholder</p>
+                    </div>
+                    <div className="dessert-info">
+                      <div className="dessert-title">
+                        {(() => {
+                          const nameParts = splitDessertName(item.name);
+                          return (
+                            <>
+                              <div className="dessert-title-english">{nameParts.english}</div>
+                              {nameParts.vietnamese && <div className="dessert-title-vietnamese">{nameParts.vietnamese}</div>}
+                            </>
+                          );
+                        })()}
+                      </div>
+                      {item.popular && <div className="popular-badge">Popular</div>}
+                    </div>
                   </div>
-                  <p className="item-description">{item.description}</p>
+                ))}
+              </div>
+            ) : category.type === "custom" ? (
+              <div className="mix-match-section">
+                <div className="mix-match-subtitle">SELECT YOUR OWN</div>
+                <div className="quantity-grid">
+                  {category.items.map((item, itemIndex) => (
+                    <div key={itemIndex} className="quantity-option">
+                      {item.name}
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
+              </div>
+            ) : category.type === "preselect" ? (
+              <div className="preselect-section">
+                <div className="preselect-subtitle">PRESELECT GIFTBOX</div>
+                <div className="preselect-note">{category.items[0]?.description}</div>
+                <div className="giftbox-grid">
+                  {category.items.map((item, itemIndex) => (
+                    <div key={itemIndex} className="giftbox-card">
+                      <h3 className="giftbox-title">{item.name}</h3>
+                      <div className="giftbox-content">
+                        <div className="giftbox-info">
+                          <div className="cake-list">
+                            {item.cakes.map((cake, cakeIndex) => (
+                              <div key={cakeIndex} className="cake-item">
+                                <span className="cake-quantity">({cake.quantity})</span>
+                                <span className="cake-name">{cake.name}</span>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                        <div className="giftbox-photo-placeholder">
+                          <div className="photo-placeholder-icon">📸</div>
+                          <p className="photo-placeholder-text">Photo Placeholder</p>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ) : (
+              <div className="menu-items">
+                {category.items.map((item, itemIndex) => (
+                  <div key={itemIndex} className="menu-item">
+                    <div className="item-header">
+                      <h3 className="item-name">
+                        {item.name}
+                        {item.popular && <Star className="popular-icon" />}
+                      </h3>
+                      <span className="item-price">${item.price.toFixed(2)}</span>
+                    </div>
+                    <p className="item-description">{item.description}</p>
+                  </div>
+                ))}
+              </div>
+            )}
           </section>
         ))}
 

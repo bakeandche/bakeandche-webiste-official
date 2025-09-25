@@ -6,7 +6,7 @@ import { Menu } from './pages/Menu'
 import { Career } from './pages/Career'
 import { Reward } from './pages/Reward'
 import { Contact } from './pages/Contact'
-import { Layout } from './components/Layout'
+import { Layout } from './components/layout/Layout'
 import './styles/App.css'
 
 function App() {

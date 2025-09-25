@@ -26,3 +26,4 @@ The testimonial cards will automatically use these images when placed in this fo
 - Optimized for web (compressed but high quality)
 - Square aspect ratio for best fit in circular frames
 - Should convey trust and authenticity
+

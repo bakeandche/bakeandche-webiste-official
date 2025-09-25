@@ -29,7 +29,7 @@ This folder contains images specifically for the hero section of the Bake And Ch
 
 To replace the Hero section image, update the image source in `src/components/Hero.jsx`:
 ```jsx
-<img src="/src/assets/images/hero/your-new-image.jpg" alt="Fresh Bakery" />
+<img src="/src/assets/images/pages/home/hero/your-new-image.jpg" alt="Fresh Bakery" />
 ```
 
 ## Image Guidelines

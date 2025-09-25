@@ -41,3 +41,4 @@ These icons will be used in the footer social media section. The current impleme
 - Ensure good contrast for both light and dark backgrounds
 - Icons should be recognizable and consistent in style
 - Consider hover states and accessibility
+

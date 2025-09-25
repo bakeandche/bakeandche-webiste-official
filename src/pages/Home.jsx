@@ -1,12 +1,63 @@
-import { Hero } from '../components/Hero'
-import { Features } from '../components/Features'
-import { Star, Clock, Heart, Award } from 'lucide-react'
+import { Hero } from '../components/features/Hero'
+import { Features } from '../components/features/Features'
+import { Star, Clock, Heart, Award, ArrowRight } from 'lucide-react'
 
 export function Home() {
   return (
     <div className="home">
-      <Hero />
-      <Features />
+      {/* Desktop Layout */}
+      <div className="desktop-layout">
+        <Hero />
+        <Features />
+      </div>
+      
+      {/* Mobile Layout */}
+      <div className="mobile-layout">
+        <div className="hero-image-section">
+          <div className="hero-visual-section">
+            <div className="photo-frame">
+              <div className="frame-content">
+                <img 
+                  src="/src/assets/images/pages/home/hero/BnC+landing+banner.webp" 
+                  alt="Fresh Bakery" 
+                  className="hero-image"
+                  onError={(e) => {
+                    e.target.style.display = 'none';
+                    e.target.nextSibling.style.display = 'block';
+                  }}
+                />
+                <div className="placeholder-photo" style={{display: 'none'}}>🥖</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="hero-content-section">
+          <div className="hero-content">
+            <div className="hero-text">
+              <div className="hero-subtitle-line"></div>
+              <p className="hero-subtitle">WELCOME TO BAKE AND CHE</p>
+              <h1>INDULGE IN EXQUISITE <span className="highlight">TASTE</span> WITH US</h1>
+              <p className="hero-description">
+                Indulge in an unforgettable dining experience at Bake and Che, where culinary excellence meets impeccable service. Secure your spot and join us for a journey through exquisite flavours and authentic bakery delights.
+              </p>
+              <div className="hero-feature-box">
+                <span className="feature-number">50+</span>
+                <span className="feature-text">Fresh Items Daily</span>
+              </div>
+              <div className="hero-buttons">
+                <button className="cta-button primary">
+                  Order Now
+                  <ArrowRight className="btn-icon" />
+                </button>
+                <button className="cta-button secondary">
+                  View Menu
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <Features />
+      </div>
       
       <section className="home-about">
         <div className="container">
@@ -27,7 +78,7 @@ export function Home() {
             <div className="about-image">
               <div className="image-container">
                 <img 
-                  src="/src/assets/images/welcome/11.png" 
+                  src="/src/assets/images/pages/home/welcome/11.png" 
                   alt="Welcome to Bake And Che - Fresh Bakery" 
                   className="about-image-content"
                   onError={(e) => {
@@ -78,7 +129,7 @@ export function Home() {
             <div className="ingredient-card">
               <div className="ingredient-photo">
                 <img 
-                  src="/src/assets/images/ingredients/Avocado.png" 
+                  src="/src/assets/images/pages/home/ingredients/Avocado.png" 
                   alt="Fresh Avocado" 
                   className="ingredient-image"
                   onError={(e) => {
@@ -96,7 +147,7 @@ export function Home() {
             <div className="ingredient-card">
               <div className="ingredient-photo">
                 <img 
-                  src="/src/assets/images/ingredients/Grass Jelly.png" 
+                  src="/src/assets/images/pages/home/ingredients/Grass Jelly.png" 
                   alt="Fresh Grass Jelly" 
                   className="ingredient-image"
                   onError={(e) => {
@@ -114,7 +165,7 @@ export function Home() {
             <div className="ingredient-card">
               <div className="ingredient-photo">
                 <img 
-                  src="/src/assets/images/ingredients/Jackfruit.png" 
+                  src="/src/assets/images/pages/home/ingredients/Jackfruit.png" 
                   alt="Fresh Jackfruit" 
                   className="ingredient-image"
                   onError={(e) => {

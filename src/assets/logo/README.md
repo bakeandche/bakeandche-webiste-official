@@ -20,7 +20,7 @@ This folder contains logo files for the Bake And Che website.
 The logo is used in the header navigation and can be referenced as:
 
 ```jsx
-<img src="/src/assets/images/logo/logo.png" alt="Bake And Che" />
+<img src="/src/assets/logo/logo.png" alt="Bake And Che" />
 ```
 
 ## Logo Guidelines

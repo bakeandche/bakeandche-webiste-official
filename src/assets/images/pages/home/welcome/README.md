@@ -21,7 +21,7 @@ This folder contains images specifically for the "Welcome to Bake And Che" secti
 To replace the Welcome section image, update the image source in `src/pages/Home.jsx`:
 
 ```jsx
-<img src="/src/assets/images/welcome/your-welcome-image.jpg" alt="Welcome to Bake And Che - Fresh Bakery" />
+<img src="/src/assets/images/pages/home/welcome/your-welcome-image.jpg" alt="Welcome to Bake And Che - Fresh Bakery" />
 ```
 
 ## Image Guidelines
@@ -31,3 +31,4 @@ To replace the Welcome section image, update the image source in `src/pages/Home
 - Optimized for web (compressed but high quality)
 - Landscape aspect ratio works best for this section
 - Should convey warmth, freshness, and welcoming atmosphere
+

@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import { Menu, X, UserPlus } from 'lucide-react'
 import { useState } from 'react'
 
@@ -21,7 +21,7 @@ export function Header() {
         <div className="header-content">
           <Link to="/" className="logo">
             <img 
-              src="/src/assets/images/logo/Bake+&+Che.webp" 
+              src="/src/assets/logo/Bake+&+Che.webp" 
               alt="Bake And Che" 
               className="logo-image"
               onError={(e) => {
@@ -33,13 +33,13 @@ export function Header() {
           </Link>
           
           <nav className={`nav ${isMenuOpen ? 'nav-open' : ''}`}>
-            <Link to="/" className="nav-link" onClick={handleNavClick}>Home</Link>
-            <Link to="/about" className="nav-link" onClick={handleNavClick}>About Us</Link>
-            <Link to="/location" className="nav-link" onClick={handleNavClick}>Location</Link>
-            <Link to="/menu" className="nav-link" onClick={handleNavClick}>Menu</Link>
-            <Link to="/career" className="nav-link" onClick={handleNavClick}>Career</Link>
-            <Link to="/reward" className="nav-link" onClick={handleNavClick}>Reward</Link>
-            <Link to="/contact" className="nav-link" onClick={handleNavClick}>Contact</Link>
+            <NavLink to="/" className="nav-link" onClick={handleNavClick}>Home</NavLink>
+            <NavLink to="/about" className="nav-link" onClick={handleNavClick}>About Us</NavLink>
+            <NavLink to="/location" className="nav-link" onClick={handleNavClick}>Location</NavLink>
+            <NavLink to="/menu" className="nav-link" onClick={handleNavClick}>Menu</NavLink>
+            <NavLink to="/career" className="nav-link" onClick={handleNavClick}>Career</NavLink>
+            <NavLink to="/reward" className="nav-link" onClick={handleNavClick}>Reward</NavLink>
+            <NavLink to="/contact" className="nav-link" onClick={handleNavClick}>Contact</NavLink>
           </nav>
 
           <div className="header-actions">

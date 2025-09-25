@@ -8,7 +8,7 @@ export function Footer() {
           <div className="footer-section">
             <div className="footer-logo">
               <img 
-                src="/src/assets/images/logo/Bake+&+Che.webp" 
+                src="/src/assets/logo/Bake+&+Che.webp" 
                 alt="Bake And Che" 
                 className="footer-logo-image"
                 onError={(e) => {

@@ -8,7 +8,9 @@
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "setup": "node setup-env.js"
+    "setup": "node setup-env.js",
+    "deploy": "node deploy.js",
+    "deploy:vercel": "vercel --prod"
   },
   "dependencies": {
     "lucide-react": "^0.294.0",

@@ -1,0 +1,23 @@
+{
+  "name": "bakeandche-website-official",
+  "version": 2,
+  "alias": ["bakeandche-webiste-official.vercel.app"],
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ],
+  "env": {
+    "VERCEL_URL": "bakeandche-webiste-official.vercel.app"
+  }
+}

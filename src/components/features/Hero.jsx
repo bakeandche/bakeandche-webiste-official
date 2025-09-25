@@ -37,7 +37,7 @@ export function Hero() {
         <div className="photo-frame">
           <div className="frame-content">
             <img 
-              src="/src/assets/images/pages/home/hero/BnC+landing+banner.webp" 
+              src="/images/hero-banner.webp" 
               alt="Fresh Bakery" 
               className="hero-image"
               onError={(e) => {

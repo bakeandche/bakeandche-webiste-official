@@ -42,7 +42,7 @@ export function Features() {
                   </div>
                 )}
                 <img 
-                  src={`/src/assets/images/pages/home/features/${feature.image}`}
+                  src={`/images/${feature.image}`}
                   alt={feature.title}
                   className="feature-img"
                   onError={(e) => {

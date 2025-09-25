@@ -18,7 +18,7 @@ export function Home() {
             <div className="photo-frame">
               <div className="frame-content">
                 <img 
-                  src="/src/assets/images/pages/home/hero/BnC+landing+banner.webp" 
+                  src="/images/hero-banner.webp" 
                   alt="Fresh Bakery" 
                   className="hero-image"
                   onError={(e) => {
@@ -78,7 +78,7 @@ export function Home() {
             <div className="about-image">
               <div className="image-container">
                 <img 
-                  src="/src/assets/images/pages/home/welcome/11.png" 
+                  src="/images/welcome-image.png" 
                   alt="Welcome to Bake And Che - Fresh Bakery" 
                   className="about-image-content"
                   onError={(e) => {
@@ -129,7 +129,7 @@ export function Home() {
             <div className="ingredient-card">
               <div className="ingredient-photo">
                 <img 
-                  src="/src/assets/images/pages/home/ingredients/Avocado.png" 
+                  src="/images/Avocado.png" 
                   alt="Fresh Avocado" 
                   className="ingredient-image"
                   onError={(e) => {
@@ -147,7 +147,7 @@ export function Home() {
             <div className="ingredient-card">
               <div className="ingredient-photo">
                 <img 
-                  src="/src/assets/images/pages/home/ingredients/Grass Jelly.png" 
+                  src="/images/Grass Jelly.png" 
                   alt="Fresh Grass Jelly" 
                   className="ingredient-image"
                   onError={(e) => {
@@ -165,7 +165,7 @@ export function Home() {
             <div className="ingredient-card">
               <div className="ingredient-photo">
                 <img 
-                  src="/src/assets/images/pages/home/ingredients/Jackfruit.png" 
+                  src="/images/Jackfruit.png" 
                   alt="Fresh Jackfruit" 
                   className="ingredient-image"
                   onError={(e) => {

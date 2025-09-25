@@ -2,6 +2,9 @@
   "name": "bakeandche-website-official",
   "version": 2,
   "alias": ["bakeandche-webiste-official.vercel.app"],
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "framework": "vite",
   "builds": [
     {
       "src": "package.json",
@@ -13,8 +16,18 @@
   ],
   "routes": [
     {
+      "src": "/assets/(.*)",
+      "dest": "/assets/$1"
+    },
+    {
       "src": "/(.*)",
       "dest": "/index.html"
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ],
   "env": {

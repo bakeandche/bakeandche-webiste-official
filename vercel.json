@@ -1,10 +1,5 @@
 {
-  "name": "bakeandche-website-official",
   "version": 2,
-  "alias": ["bakeandche-webiste-official.vercel.app"],
-  "buildCommand": "npm run build",
-  "outputDirectory": "dist",
-  "framework": "vite",
   "builds": [
     {
       "src": "package.json",
@@ -23,25 +18,5 @@
       "src": "/(.*)",
       "dest": "/index.html"
     }
-  ],
-  "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/index.html"
-    }
-  ],
-  "headers": [
-    {
-      "source": "/(.*)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=0, must-revalidate"
-        }
-      ]
-    }
-  ],
-  "env": {
-    "VERCEL_URL": "bakeandche-webiste-official.vercel.app"
-  }
+  ]
 }

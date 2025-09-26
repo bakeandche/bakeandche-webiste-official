@@ -1407,6 +1407,48 @@ h6 {
   overflow: hidden;
 }
 
+/* Features Actions */
+.features-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 2rem;
+  padding: 0 1rem;
+}
+
+.see-menu-btn {
+  background: #91b33b;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.see-menu-btn:hover {
+  background: #7a9a2f;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(145, 179, 59, 0.3);
+}
+
+/* Mobile responsiveness for See Menu button */
+@media (max-width: 768px) {
+  .features-actions {
+    justify-content: center;
+    margin-top: 1.5rem;
+    padding: 0;
+  }
+  
+  .see-menu-btn {
+    padding: 0.7rem 1.2rem;
+    font-size: 0.9rem;
+  }
+}
+
 .features::before {
   content: '';
   position: absolute;

@@ -21,9 +21,6 @@ export function Hero() {
                 Order Now
                 <ArrowRight className="btn-icon" />
               </button>
-              <button className="cta-button secondary">
-                View Menu
-              </button>
             </div>
           </div>
         </div>

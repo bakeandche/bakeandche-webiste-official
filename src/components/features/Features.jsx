@@ -62,6 +62,15 @@ export function Features() {
             </div>
           ))}
         </div>
+        
+        <div className="features-actions">
+          <button 
+            className="see-menu-btn"
+            onClick={() => window.location.href = '/menu'}
+          >
+            See Menu
+          </button>
+        </div>
       </div>
     </section>
   )

@@ -1,13 +1,13 @@
 import { Link, NavLink } from 'react-router-dom'
-import { Menu, X, UserPlus } from 'lucide-react'
+import { Menu, X, ShoppingCart } from 'lucide-react'
 import { useState } from 'react'
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
-  const handleJoinUs = () => {
-    // Scroll to reward section or redirect to reward page
-    window.location.href = '/reward'
+  const handleOrderNow = () => {
+    // Redirect to menu page for ordering
+    window.location.href = '/menu'
   }
 
   const handleNavClick = () => {
@@ -45,10 +45,10 @@ export function Header() {
           <div className="header-actions">
             <button 
               className="join-btn"
-              onClick={handleJoinUs}
+              onClick={handleOrderNow}
             >
-              <UserPlus size={18} />
-              Join Us
+              <ShoppingCart size={18} />
+              Order Now
             </button>
             
             <button 

@@ -1,6 +1,6 @@
 import { Hero } from '../components/features/Hero'
 import { Features } from '../components/features/Features'
-import { Star, Clock, Heart, Award, ArrowRight } from 'lucide-react'
+import { Star, Clock, Heart, Award, ArrowRight, ShoppingCart, Smartphone, Download } from 'lucide-react'
 
 export function Home() {
   return (
@@ -63,7 +63,7 @@ export function Home() {
         <div className="container">
           <div className="about-content">
             <div className="about-text">
-              <h2>Welcome to Bake And Che</h2>
+              <h2>MUST TRY FLANDAN CHEESECAKE</h2>
               <p>
                 We're passionate about creating the most delicious, fresh-baked goods 
                 that bring joy to every bite. From our artisan breads to our decadent 
@@ -73,7 +73,10 @@ export function Home() {
                 Visit us today and experience the difference that fresh, quality baking makes. 
                 We can't wait to share our passion with you!
               </p>
-              <button className="cta-button">Visit Our Menu</button>
+              <button className="join-btn">
+                <ShoppingCart size={18} />
+                Order Now
+              </button>
             </div>
             <div className="about-image">
               <div className="image-container">
@@ -94,32 +97,38 @@ export function Home() {
         </div>
       </section>
 
-      <section className="home-stats">
+      <hr className="section-divider" />
+
+      <section className="app-download">
         <div className="container">
-          <div className="stats-grid">
-            <div className="stat-item">
-              <Star className="stat-icon" />
-              <h3>4.9/5</h3>
-              <p>Customer Rating</p>
+          <div className="download-content">
+            <div className="download-text">
+              <h2>Download Our App</h2>
+              <p>Get the full experience with our mobile app. Track your rewards, place orders, and enjoy exclusive app-only features!</p>
             </div>
-            <div className="stat-item">
-              <Clock className="stat-icon" />
-              <h3>4+</h3>
-              <p>Years of Excellence</p>
-            </div>
-            <div className="stat-item">
-              <Heart className="stat-icon" />
-              <h3>1000+</h3>
-              <p>Happy Customers</p>
-            </div>
-            <div className="stat-item">
-              <Award className="stat-icon" />
-              <h3>50+</h3>
-              <p>Fresh Items Daily</p>
+            <div className="download-buttons">
+              <a href="#" className="download-btn android" target="_blank" rel="noopener noreferrer">
+                <Smartphone className="download-icon" />
+                <div className="download-info">
+                  <span className="download-label">Download for</span>
+                  <span className="download-platform">Android</span>
+                </div>
+                <Download className="download-arrow" />
+              </a>
+              <a href="#" className="download-btn ios" target="_blank" rel="noopener noreferrer">
+                <Smartphone className="download-icon" />
+                <div className="download-info">
+                  <span className="download-label">Download for</span>
+                  <span className="download-platform">iOS</span>
+                </div>
+                <Download className="download-arrow" />
+              </a>
             </div>
           </div>
         </div>
       </section>
+
+      <hr className="section-divider thick" />
 
       <section className="home-ingredients">
         <div className="container">
@@ -180,6 +189,35 @@ export function Home() {
                 <p>Peeled and portioned fresh every day for a sweet, fiber-rich boost.</p>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <hr className="section-divider dotted" />
+
+      <section className="home-video-cta">
+        <div className="video-background">
+          <video 
+            className="background-video"
+            autoPlay 
+            muted 
+            loop 
+            playsInline
+            poster="/images/video-poster.jpg"
+          >
+            <source src="/videos/0925 BC BRANDING - TV Video.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          <div className="video-overlay-dark"></div>
+        </div>
+        <div className="video-content">
+          <div className="container">
+            <h2>See Our Process</h2>
+            <p className="video-subtitle">Watch how we create our delicious desserts with fresh ingredients</p>
+            <button className="cta-button primary">
+              Order Now
+              <ArrowRight className="btn-icon" />
+            </button>
           </div>
         </div>
       </section>

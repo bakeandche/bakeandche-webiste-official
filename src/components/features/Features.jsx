@@ -25,7 +25,7 @@ export function Features() {
   ]
 
   return (
-    <section className="features">
+    <section id="home-featured-items" className="features">
       <div className="container">
         <div className="section-header">
           <h2>Most Favorite</h2>

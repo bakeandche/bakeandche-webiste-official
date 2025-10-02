@@ -1471,6 +1471,7 @@ h6 {
   backface-visibility: hidden;
   margin: 0;
   padding: 0;
+  width: 100%;
 }
 
 .video-background {
@@ -1482,6 +1483,7 @@ h6 {
   z-index: 1;
   margin: 0;
   padding: 0;
+  overflow: hidden;
 }
 
 .background-video {
@@ -1494,6 +1496,7 @@ h6 {
   image-rendering: crisp-edges;
   margin: 0;
   padding: 0;
+  display: block;
 }
 
 .video-overlay-dark {

@@ -1468,8 +1468,8 @@ h6 {
 /* Video CTA Section */
 .home-video-cta {
   position: relative;
-  height: 70vh;
-  min-height: 500px;
+  height: 100vh;
+  min-height: 100vh;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -1642,8 +1642,8 @@ h6 {
 /* Mobile responsiveness for video CTA */
 @media (max-width: 768px) {
   .home-video-cta {
-    height: 60vh;
-    min-height: 400px;
+    height: 80vh;
+    min-height: 500px;
   }
   
   .video-content h2 {
@@ -1665,8 +1665,8 @@ h6 {
 
 @media (max-width: 480px) {
   .home-video-cta {
-    height: 50vh;
-    min-height: 350px;
+    height: 70vh;
+    min-height: 400px;
   }
   
   .video-content h2 {

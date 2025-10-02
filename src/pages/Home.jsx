@@ -26,9 +26,6 @@ export function Home() {
             <p className="hero-subtitle">WELCOME TO BAKE AND CHE</p>
             <div className="hero-subtitle-line"></div>
             <h2>INDULGE IN EXQUISITE <span className="highlight">TASTE</span> WITH US</h2>
-            <p className="video-subtitle">
-              Indulge in an unforgettable dining experience at Bake and Che, where culinary excellence meets impeccable service. Secure your spot and join us for a journey through exquisite flavours and authentic bakery delights.
-            </p>
           </div>
         </div>
       </section>

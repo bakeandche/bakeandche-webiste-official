@@ -485,6 +485,7 @@ h6 {
   border-radius: 20px;
   backdrop-filter: blur(10px);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  min-height: 2.5rem;
 }
 
 .nav-link {
@@ -529,6 +530,7 @@ h6 {
   font-size: 1rem;
   position: relative;
   overflow: hidden;
+  min-height: 2.5rem;
 }
 
 .join-btn::before {

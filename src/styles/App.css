@@ -395,9 +395,16 @@ h6 {
 /* Header Styles */
 .header {
   background: transparent;
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  width: 100%;
   z-index: 1001; /* Higher than fixed elements */
+  transition: transform 0.3s ease-in-out;
+}
+
+.header.hidden {
+  transform: translateY(-100%);
 }
 
 .header-content {
@@ -548,11 +555,57 @@ h6 {
   transform: translateY(-2px);
 }
 
+/* Floating Order Now Button */
+.floating-order-btn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: #edb956;
+  color: #2c2c2c;
+  border: none;
+  padding: 1rem 1.5rem;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 4px 20px rgba(237, 185, 86, 0.3);
+  z-index: 1000;
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(100px);
+  pointer-events: none;
+}
+
+.floating-order-btn.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.floating-order-btn:hover {
+  background: #d4a847;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 25px rgba(237, 185, 86, 0.4);
+}
+
+.floating-order-btn:active {
+  transform: translateY(-1px);
+}
+
 /* Responsive Buttons */
 @media (max-width: 768px) {
   .join-btn {
     padding: 0.45rem 0.9rem;
     font-size: 0.95rem;
+  }
+  
+  .floating-order-btn {
+    bottom: 1.5rem;
+    right: 1.5rem;
+    padding: 0.8rem 1.2rem;
+    font-size: 0.9rem;
   }
 }
 
@@ -560,6 +613,13 @@ h6 {
   .join-btn {
     padding: 0.4rem 0.8rem;
     font-size: 0.9rem;
+  }
+  
+  .floating-order-btn {
+    bottom: 1rem;
+    right: 1rem;
+    padding: 0.7rem 1rem;
+    font-size: 0.85rem;
   }
 }
 

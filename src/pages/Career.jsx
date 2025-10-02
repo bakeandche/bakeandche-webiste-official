@@ -1,6 +1,54 @@
+import { useState } from 'react'
 import { Users, Clock, MapPin, Send } from 'lucide-react'
+// Database import removed for local mode
 
 export function Career() {
+  const [applicationData, setApplicationData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    position: '',
+    experienceLevel: '',
+    coverLetter: '',
+    availability: ''
+  })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState(null)
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target
+    setApplicationData(prev => ({
+      ...prev,
+      [name]: value
+    }))
+  }
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+    setSubmitStatus(null)
+
+    try {
+      // Mock submission for local development
+      await new Promise(resolve => setTimeout(resolve, 1000)) // Simulate API call
+      setSubmitStatus({ type: 'success', message: 'Application submitted successfully! We\'ll review it and get back to you soon.' })
+      setApplicationData({
+        firstName: '',
+        lastName: '',
+        email: '',
+        phone: '',
+        position: '',
+        experienceLevel: '',
+        coverLetter: '',
+        availability: ''
+      })
+    } catch (error) {
+      setSubmitStatus({ type: 'error', message: 'Failed to submit application. Please try again.' })
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
   const jobOpenings = [
     {
       title: "Baker",
@@ -143,6 +191,134 @@ export function Career() {
               <p>If it's a good fit, we'll extend an offer and welcome you to the Bake And Che family.</p>
             </div>
           </div>
+        </section>
+
+        <section className="application-form">
+          <h2>Apply Now</h2>
+          {submitStatus && (
+            <div className={`submit-status ${submitStatus.type}`}>
+              {submitStatus.message}
+            </div>
+          )}
+          <form className="career-form" onSubmit={handleSubmit}>
+            <div className="form-row">
+              <div className="form-group">
+                <label htmlFor="firstName">First Name *</label>
+                <input 
+                  type="text" 
+                  id="firstName" 
+                  name="firstName" 
+                  value={applicationData.firstName}
+                  onChange={handleInputChange}
+                  required 
+                />
+              </div>
+              <div className="form-group">
+                <label htmlFor="lastName">Last Name *</label>
+                <input 
+                  type="text" 
+                  id="lastName" 
+                  name="lastName" 
+                  value={applicationData.lastName}
+                  onChange={handleInputChange}
+                  required 
+                />
+              </div>
+            </div>
+
+            <div className="form-row">
+              <div className="form-group">
+                <label htmlFor="email">Email *</label>
+                <input 
+                  type="email" 
+                  id="email" 
+                  name="email" 
+                  value={applicationData.email}
+                  onChange={handleInputChange}
+                  required 
+                />
+              </div>
+              <div className="form-group">
+                <label htmlFor="phone">Phone *</label>
+                <input 
+                  type="tel" 
+                  id="phone" 
+                  name="phone" 
+                  value={applicationData.phone}
+                  onChange={handleInputChange}
+                  required 
+                />
+              </div>
+            </div>
+
+            <div className="form-row">
+              <div className="form-group">
+                <label htmlFor="position">Position *</label>
+                <select 
+                  id="position" 
+                  name="position" 
+                  value={applicationData.position}
+                  onChange={handleInputChange}
+                  required
+                >
+                  <option value="">Select a position</option>
+                  <option value="Baker">Baker</option>
+                  <option value="Barista">Barista</option>
+                  <option value="Store Manager">Store Manager</option>
+                  <option value="Server">Server</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+              <div className="form-group">
+                <label htmlFor="experienceLevel">Experience Level</label>
+                <select 
+                  id="experienceLevel" 
+                  name="experienceLevel" 
+                  value={applicationData.experienceLevel}
+                  onChange={handleInputChange}
+                >
+                  <option value="">Select experience level</option>
+                  <option value="Entry-level">Entry-level</option>
+                  <option value="Intermediate">Intermediate</option>
+                  <option value="Advanced">Advanced</option>
+                </select>
+              </div>
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="availability">Availability *</label>
+              <select 
+                id="availability" 
+                name="availability" 
+                value={applicationData.availability}
+                onChange={handleInputChange}
+                required
+              >
+                <option value="">Select availability</option>
+                <option value="Full-time">Full-time</option>
+                <option value="Part-time">Part-time</option>
+                <option value="Weekends only">Weekends only</option>
+                <option value="Flexible">Flexible</option>
+              </select>
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="coverLetter">Cover Letter</label>
+              <textarea 
+                id="coverLetter" 
+                name="coverLetter" 
+                rows="5" 
+                placeholder="Tell us why you'd like to work with us..."
+                value={applicationData.coverLetter}
+                onChange={handleInputChange}
+              ></textarea>
+            </div>
+
+            <button type="submit" className="submit-btn" disabled={isSubmitting}>
+              <Send className="btn-icon" />
+              {isSubmitting ? 'Submitting...' : 'Submit Application'}
+            </button>
+          </form>
         </section>
 
         <section className="contact-hr">

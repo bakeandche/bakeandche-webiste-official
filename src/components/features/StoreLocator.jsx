@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { Search, MapPin, Clock, Phone, Truck, Coffee, X, RotateCcw } from 'lucide-react'
-import { storeLocations, serviceTypes, calculateDistance, formatDistance } from '../../constants/stores'
+// Database import removed for local mode
+import { calculateDistance, formatDistance } from '../../constants/stores'
 import mapboxgl from 'mapbox-gl'
 import 'mapbox-gl/dist/mapbox-gl.css'
 
@@ -23,9 +24,10 @@ console.log('Mapbox token set:', mapboxToken ? 'Yes' : 'No')
 export function StoreLocator() {
   const [searchQuery, setSearchQuery] = useState('')
   const [userLocation, setUserLocation] = useState(null)
-  const [filteredStores, setFilteredStores] = useState(storeLocations)
+  const [filteredStores, setFilteredStores] = useState([])
   const [selectedStore, setSelectedStore] = useState(null)
   const [mapError, setMapError] = useState(null)
+  const [loading, setLoading] = useState(true)
   const mapContainer = useRef(null)
   const map = useRef(null)
   const markers = useRef([])
@@ -262,6 +264,45 @@ export function StoreLocator() {
     console.log('Markers added successfully:', markers.current.length)
   }
 
+  // Load store locations - using static data for local mode
+  useEffect(() => {
+    const loadStores = () => {
+      try {
+        // Use static store data for local development
+        const staticStores = [
+          {
+            id: 1,
+            name: "Bake & Che Downtown",
+            address: "123 Baker Street",
+            city: "Downtown",
+            state: "CA",
+            zipCode: "12345",
+            phone: "(555) 123-BAKE",
+            coordinates: [-117.9143, 33.7175],
+            hours: {
+              monday: "Mon-Fri: 6 AM - 8 PM"
+            },
+            services: {
+              pickup: true,
+              delivery: true,
+              dineIn: true
+            },
+            features: ["Free WiFi", "Parking Available", "Wheelchair Accessible"],
+            distance: null
+          }
+        ]
+        setFilteredStores(staticStores)
+      } catch (error) {
+        console.error('Error loading stores:', error)
+        setMapError('Failed to load store locations')
+      } finally {
+        setLoading(false)
+      }
+    }
+
+    loadStores()
+  }, [])
+
   // Get user location for distance calculation
   useEffect(() => {
     if (navigator.geolocation) {
@@ -280,7 +321,7 @@ export function StoreLocator() {
 
   // Filter stores based on search query only
   useEffect(() => {
-    let filtered = storeLocations.filter(store => {
+    let filtered = filteredStores.filter(store => {
       // Search query filter
       if (searchQuery) {
         const query = searchQuery.toLowerCase()
@@ -309,7 +350,7 @@ export function StoreLocator() {
     }
 
     setFilteredStores(filtered)
-  }, [searchQuery, userLocation])
+  }, [searchQuery, userLocation, filteredStores])
 
   // Handle store selection
   const handleStoreSelect = (store) => {
@@ -336,7 +377,7 @@ export function StoreLocator() {
     if (map.current) {
       // Calculate bounds to fit all store locations
       const bounds = new mapboxgl.LngLatBounds()
-      storeLocations.forEach(store => {
+      filteredStores.forEach(store => {
         bounds.extend(store.coordinates)
       })
       
@@ -360,6 +401,28 @@ export function StoreLocator() {
     }
   }
 
+
+  if (loading) {
+    return (
+      <div className="store-locator">
+        <div className="store-locator-header">
+          <h2>Find a Store Near You</h2>
+          <p>Loading store locations...</p>
+        </div>
+      </div>
+    )
+  }
+
+  if (mapError) {
+    return (
+      <div className="store-locator">
+        <div className="store-locator-header">
+          <h2>Find a Store Near You</h2>
+          <p>Error: {mapError}</p>
+        </div>
+      </div>
+    )
+  }
 
   return (
     <div className="store-locator">

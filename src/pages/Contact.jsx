@@ -1,6 +1,52 @@
+import { useState } from 'react'
 import { MapPin, Phone, Mail, Send, MessageCircle } from 'lucide-react'
+// Database import removed for local mode
 
 export function Contact() {
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    subject: '',
+    message: '',
+    newsletter: false
+  })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState(null)
+
+  const handleInputChange = (e) => {
+    const { name, value, type, checked } = e.target
+    setFormData(prev => ({
+      ...prev,
+      [name]: type === 'checkbox' ? checked : value
+    }))
+  }
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+    setSubmitStatus(null)
+
+    try {
+      // Mock submission for local development
+      await new Promise(resolve => setTimeout(resolve, 1000)) // Simulate API call
+      setSubmitStatus({ type: 'success', message: 'Message sent successfully! We\'ll get back to you soon.' })
+      setFormData({
+        firstName: '',
+        lastName: '',
+        email: '',
+        phone: '',
+        subject: '',
+        message: '',
+        newsletter: false
+      })
+    } catch (error) {
+      setSubmitStatus({ type: 'error', message: 'Failed to send message. Please try again.' })
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
   return (
     <div className="contact-page">
       <div className="hero-section">
@@ -56,32 +102,70 @@ export function Contact() {
 
           <div className="contact-form-section">
             <h2>Send us a Message</h2>
-            <form className="contact-form">
+            {submitStatus && (
+              <div className={`submit-status ${submitStatus.type}`}>
+                {submitStatus.message}
+              </div>
+            )}
+            <form className="contact-form" onSubmit={handleSubmit}>
               <div className="form-row">
                 <div className="form-group">
                   <label htmlFor="firstName">First Name *</label>
-                  <input type="text" id="firstName" name="firstName" required />
+                  <input 
+                    type="text" 
+                    id="firstName" 
+                    name="firstName" 
+                    value={formData.firstName}
+                    onChange={handleInputChange}
+                    required 
+                  />
                 </div>
                 <div className="form-group">
                   <label htmlFor="lastName">Last Name *</label>
-                  <input type="text" id="lastName" name="lastName" required />
+                  <input 
+                    type="text" 
+                    id="lastName" 
+                    name="lastName" 
+                    value={formData.lastName}
+                    onChange={handleInputChange}
+                    required 
+                  />
                 </div>
               </div>
 
               <div className="form-row">
                 <div className="form-group">
                   <label htmlFor="email">Email *</label>
-                  <input type="email" id="email" name="email" required />
+                  <input 
+                    type="email" 
+                    id="email" 
+                    name="email" 
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    required 
+                  />
                 </div>
                 <div className="form-group">
                   <label htmlFor="phone">Phone</label>
-                  <input type="tel" id="phone" name="phone" />
+                  <input 
+                    type="tel" 
+                    id="phone" 
+                    name="phone" 
+                    value={formData.phone}
+                    onChange={handleInputChange}
+                  />
                 </div>
               </div>
 
               <div className="form-group">
                 <label htmlFor="subject">Subject *</label>
-                <select id="subject" name="subject" required>
+                <select 
+                  id="subject" 
+                  name="subject" 
+                  value={formData.subject}
+                  onChange={handleInputChange}
+                  required
+                >
                   <option value="">Select a subject</option>
                   <option value="general">General Inquiry</option>
                   <option value="order">Custom Order</option>
@@ -99,20 +183,28 @@ export function Contact() {
                   name="message" 
                   rows="5" 
                   placeholder="Tell us how we can help you..."
+                  value={formData.message}
+                  onChange={handleInputChange}
                   required
                 ></textarea>
               </div>
 
               <div className="form-group checkbox-group">
-                <input type="checkbox" id="newsletter" name="newsletter" />
+                <input 
+                  type="checkbox" 
+                  id="newsletter" 
+                  name="newsletter" 
+                  checked={formData.newsletter}
+                  onChange={handleInputChange}
+                />
                 <label htmlFor="newsletter">
                   I'd like to receive updates and special offers via email
                 </label>
               </div>
 
-              <button type="submit" className="submit-btn">
+              <button type="submit" className="submit-btn" disabled={isSubmitting}>
                 <Send className="btn-icon" />
-                Send Message
+                {isSubmitting ? 'Sending...' : 'Send Message'}
               </button>
             </form>
           </div>

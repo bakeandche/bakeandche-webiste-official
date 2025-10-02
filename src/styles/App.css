@@ -1342,8 +1342,8 @@ h6 {
 }
 
 .cta-button {
-  padding: 1rem 2rem;
-  border-radius: 30px;
+  padding: 1rem 1.5rem;
+  border-radius: 50px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -1355,6 +1355,7 @@ h6 {
   font-size: 1rem;
   position: relative;
   overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .cta-button::before {
@@ -1383,7 +1384,8 @@ h6 {
 
 .cta-button.primary:hover {
   background: #7a9a32;
-  transform: translateY(-2px);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 25px rgba(145, 179, 59, 0.4);
 }
 
 .cta-button.secondary {
@@ -1395,6 +1397,8 @@ h6 {
 .cta-button.secondary:hover {
   background: #91b33b;
   color: #fdfcf9;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 25px rgba(145, 179, 59, 0.4);
 }
 
 .hero-visual {
@@ -1714,9 +1718,9 @@ h6 {
   background: #91b33b;
   color: white;
   border: none;
-  padding: 1rem 2rem;
-  border-radius: 30px;
-  font-size: 1.1rem;
+  padding: 1rem 1.5rem;
+  border-radius: 50px;
+  font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -1724,13 +1728,13 @@ h6 {
   align-items: center;
   gap: 0.5rem;
   text-decoration: none;
-  box-shadow: 0 4px 15px rgba(145, 179, 59, 0.3);
+  box-shadow: 0 4px 20px rgba(145, 179, 59, 0.3);
 }
 
 .video-content .cta-button:hover {
   background: #7a9a32;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(145, 179, 59, 0.4);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 25px rgba(145, 179, 59, 0.4);
 }
 
 /* Mobile responsiveness for video CTA */
@@ -1756,7 +1760,7 @@ h6 {
   }
   
   .video-content .cta-button {
-    padding: 0.8rem 1.5rem;
+    padding: 0.8rem 1.2rem;
     font-size: 1rem;
   }
 }
@@ -1780,7 +1784,7 @@ h6 {
   }
   
   .video-content .cta-button {
-    padding: 0.7rem 1.2rem;
+    padding: 0.7rem 1rem;
     font-size: 0.9rem;
   }
 }

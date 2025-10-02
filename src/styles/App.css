@@ -1511,9 +1511,14 @@ h6 {
 .video-content {
   position: relative;
   z-index: 3;
-  text-align: center;
+  text-align: left;
   color: white;
   width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
 }
 
 .text-overlay {
@@ -1535,6 +1540,10 @@ h6 {
   position: relative;
   z-index: 2;
   padding: 2.5rem;
+  text-align: left;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 4rem;
 }
 
 /* Video section specific spacing */
@@ -1543,9 +1552,18 @@ h6 {
 }
 
 /* Center the subtitle line in video section */
+.video-content .hero-subtitle {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #edb956;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
 .video-content .hero-subtitle-line {
-  margin-left: auto;
+  margin-left: 0;
   margin-right: auto;
+  margin-bottom: 1.5rem;
 }
 
 /* Responsive text overlay */
@@ -1558,7 +1576,8 @@ h6 {
   }
   
   .video-content .container {
-    padding: 2.5rem;
+    padding: 2rem;
+    padding-left: 2rem;
   }
   
   /* Mobile video section hero-subtitle styling */
@@ -1579,7 +1598,8 @@ h6 {
   }
   
   .video-content .container {
-    padding: 2rem;
+    padding: 1.5rem;
+    padding-left: 1.5rem;
   }
   
   /* Mobile video section hero-subtitle styling */
@@ -1592,11 +1612,12 @@ h6 {
 }
 
 .video-content h2 {
-  font-size: 3rem;
+  font-size: 4.5rem;
   font-weight: 700;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   text-rendering: optimizeLegibility;
+  line-height: 1.1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   letter-spacing: -0.02em;
@@ -1647,8 +1668,12 @@ h6 {
   }
   
   .video-content h2 {
-    font-size: 2.2rem;
-    margin-bottom: 0.8rem;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .video-content .hero-subtitle {
+    font-size: 1.4rem;
   }
   
   .video-subtitle {
@@ -1670,7 +1695,11 @@ h6 {
   }
   
   .video-content h2 {
-    font-size: 1.8rem;
+    font-size: 2.2rem;
+  }
+  
+  .video-content .hero-subtitle {
+    font-size: 1.2rem;
   }
   
   .video-subtitle {

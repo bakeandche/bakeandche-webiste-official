@@ -21,7 +21,6 @@ export function Home() {
           <div className="video-overlay-dark"></div>
         </div>
         <div className="video-content">
-          <div className="text-overlay"></div>
           <div className="container">
             <p className="hero-subtitle">WELCOME TO BAKE AND CHE</p>
             <div className="hero-subtitle-line"></div>

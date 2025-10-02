@@ -560,9 +560,9 @@ h6 {
 
 /* Floating Order Now Button */
 .floating-order-btn {
-  position: fixed;
-  bottom: 2rem;
-  right: 2rem;
+  position: fixed !important;
+  bottom: 2rem !important;
+  right: 2rem !important;
   background: #edb956;
   color: #2c2c2c;
   border: none;
@@ -574,7 +574,7 @@ h6 {
   align-items: center;
   gap: 0.5rem;
   box-shadow: 0 4px 20px rgba(237, 185, 86, 0.3);
-  z-index: 9999;
+  z-index: 99999 !important;
   transition: all 0.3s ease;
   opacity: 0;
   transform: translateY(100px);
@@ -584,9 +584,10 @@ h6 {
 }
 
 .floating-order-btn.visible {
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  pointer-events: auto !important;
+  display: flex !important;
 }
 
 .floating-order-btn::before {

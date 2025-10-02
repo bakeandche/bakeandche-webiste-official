@@ -7429,3 +7429,93 @@ h6 {
     font-size: 0.95rem;
   }
 }
+
+/* Database Test Component */
+.database-test {
+  background: #f8f9f5;
+  border: 2px solid #91b33b;
+  border-radius: 12px;
+  padding: 2rem;
+  margin: 2rem 0;
+}
+
+.database-test h2 {
+  color: #2c2c2c;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.database-test h3 {
+  color: #91b33b;
+  margin: 1.5rem 0 0.5rem 0;
+  font-size: 1.2rem;
+}
+
+.test-results {
+  display: grid;
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.test-section {
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+}
+
+.test-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0;
+}
+
+.test-section li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #f0f0f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.test-section li:last-child {
+  border-bottom: none;
+}
+
+.featured {
+  background: #edb956;
+  color: #2c2c2c;
+  padding: 0.2rem 0.5rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.test-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.test-actions button {
+  background: #91b33b;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.test-actions button:hover {
+  background: #7a9a32;
+  transform: translateY(-2px);
+}
+
+.loading {
+  text-align: center;
+  color: #91b33b;
+  font-weight: 600;
+}

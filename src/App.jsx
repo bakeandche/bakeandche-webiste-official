@@ -10,25 +10,28 @@ import { Auth } from './pages/Auth'
 import { Admin } from './pages/Admin'
 import { Layout } from './components/layout/Layout'
 import { RequireAuth } from './components/common/RequireAuth'
+import { AuthProvider } from './hooks/useAuth'
 import './styles/App.css'
 
 function App() {
   return (
-    <Router>
-      <Layout>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/location" element={<Location />} />
-          <Route path="/menu" element={<Menu />} />
-          <Route path="/career" element={<Career />} />
-          <Route path="/reward" element={<Reward />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/auth" element={<Auth />} />
-          <Route path="/admin" element={<RequireAuth><Admin /></RequireAuth>} />
-        </Routes>
-      </Layout>
-    </Router>
+    <AuthProvider>
+      <Router>
+        <Layout>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/location" element={<Location />} />
+            <Route path="/menu" element={<Menu />} />
+            <Route path="/career" element={<Career />} />
+            <Route path="/reward" element={<Reward />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/auth" element={<Auth />} />
+            <Route path="/admin" element={<RequireAuth><Admin /></RequireAuth>} />
+          </Routes>
+        </Layout>
+      </Router>
+    </AuthProvider>
   )
 }
 

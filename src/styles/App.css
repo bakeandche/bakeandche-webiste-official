@@ -579,12 +579,34 @@ h6 {
   opacity: 0;
   transform: translateY(100px);
   pointer-events: none;
+  position: relative;
+  overflow: hidden;
 }
 
 .floating-order-btn.visible {
   opacity: 1;
   transform: translateY(0);
   pointer-events: auto;
+}
+
+.floating-order-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('/images/pattern-white.png');
+  background-repeat: repeat;
+  background-size: 20px;
+  opacity: 0.1;
+  z-index: 1;
+  border-radius: 50px;
+}
+
+.floating-order-btn > * {
+  position: relative;
+  z-index: 2;
 }
 
 .floating-order-btn:hover {

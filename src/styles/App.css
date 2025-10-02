@@ -1523,7 +1523,7 @@ h6 {
   align-items: center;
   justify-content: flex-start;
   flex-direction: column;
-  padding-left: 4rem;
+  padding-left: 2rem;
 }
 
 .text-overlay {
@@ -1580,7 +1580,7 @@ h6 {
   }
   
   .video-content {
-    padding-left: 2rem;
+    padding-left: 1rem;
   }
   
   .video-content .container {
@@ -1605,7 +1605,7 @@ h6 {
   }
   
   .video-content {
-    padding-left: 1.5rem;
+    padding-left: 0.5rem;
   }
   
   .video-content .container {

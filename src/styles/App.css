@@ -395,9 +395,11 @@ h6 {
 /* Header Styles */
 .header {
   background: transparent;
-  position: sticky;
+  position: fixed;
   top: 0;
-  z-index: 1001; /* Higher than fixed elements */
+  left: 0;
+  width: 100%;
+  z-index: 1001; /* Higher than video */
 }
 
 .header-content {
@@ -643,6 +645,7 @@ h6 {
   position: relative;
   background: #fdfcf9;
   overflow: hidden;
+  margin-top: 100vh; /* Push content below the fixed video */
 }
 
 .hero::after {
@@ -1459,7 +1462,10 @@ h6 {
 
 /* Video CTA Section */
 .home-video-cta {
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
   height: 100vh;
   min-height: 100vh;
   overflow: hidden;
@@ -1471,9 +1477,7 @@ h6 {
   backface-visibility: hidden;
   margin: 0;
   padding: 0;
-  top: 0;
-  left: 0;
-  width: 100vw;
+  z-index: 1;
 }
 
 .video-background {

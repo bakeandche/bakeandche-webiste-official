@@ -1523,6 +1523,7 @@ h6 {
   align-items: center;
   justify-content: flex-start;
   flex-direction: column;
+  padding-left: 4rem;
 }
 
 .text-overlay {
@@ -1543,10 +1544,10 @@ h6 {
 .video-content .container {
   position: relative;
   z-index: 2;
-  padding: 80px 2.5rem 2.5rem 4rem; /* Add top padding to account for header */
+  padding: 80px 2.5rem 2.5rem 0; /* Remove left padding since video-content has padding-left */
   text-align: left;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 0;
 }
 
 /* Video section specific spacing */
@@ -1578,8 +1579,12 @@ h6 {
     padding: 2.5rem;
   }
   
+  .video-content {
+    padding-left: 2rem;
+  }
+  
   .video-content .container {
-    padding: 80px 2rem 2rem 2rem; /* Add top padding for header on mobile */
+    padding: 80px 2rem 2rem 0; /* Remove left padding for mobile */
   }
   
   /* Mobile video section hero-subtitle styling */
@@ -1599,8 +1604,12 @@ h6 {
     padding: 2rem;
   }
   
+  .video-content {
+    padding-left: 1.5rem;
+  }
+  
   .video-content .container {
-    padding: 80px 1.5rem 1.5rem 1.5rem; /* Add top padding for header on mobile */
+    padding: 80px 1.5rem 1.5rem 0; /* Remove left padding for mobile */
   }
   
   /* Mobile video section hero-subtitle styling */

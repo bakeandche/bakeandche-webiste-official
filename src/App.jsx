@@ -6,7 +6,10 @@ import { Menu } from './pages/Menu'
 import { Career } from './pages/Career'
 import { Reward } from './pages/Reward'
 import { Contact } from './pages/Contact'
+import { Auth } from './pages/Auth'
+import { Admin } from './pages/Admin'
 import { Layout } from './components/layout/Layout'
+import { RequireAuth } from './components/common/RequireAuth'
 import './styles/App.css'
 
 function App() {
@@ -21,6 +24,8 @@ function App() {
           <Route path="/career" element={<Career />} />
           <Route path="/reward" element={<Reward />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/auth" element={<Auth />} />
+          <Route path="/admin" element={<RequireAuth><Admin /></RequireAuth>} />
         </Routes>
       </Layout>
     </Router>

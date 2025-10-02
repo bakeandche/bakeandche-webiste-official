@@ -1363,6 +1363,8 @@ h6 {
 .features-container {
   display: flex;
   align-items: center;
+  justify-content: center;
+  flex-direction: column;
   gap: 2rem;
   margin-top: 2rem;
 }
@@ -1752,14 +1754,21 @@ h6 {
 
 .features-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-auto-flow: column;
+  grid-auto-columns: min(560px, calc((100% - (3 * 2rem)) / 4));
   gap: 2rem;
-  max-width: 1800px;
-  margin: 0;
+  max-width: 100%;
+  margin: 0 auto;
   padding: 0 1rem;
   align-items: start;
   position: relative;
   z-index: 1;
+  overflow-x: visible;
+}
+
+/* Widen features section container to prevent card cutoff on desktop */
+.features .container {
+  max-width: 2400px;
 }
 
 @media (max-width: 1200px) {

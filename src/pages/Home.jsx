@@ -22,9 +22,6 @@ export function Home() {
         </div>
         <div className="video-content">
           <div className="container">
-            <p className="hero-subtitle">WELCOME TO BAKE AND CHE</p>
-            <div className="hero-subtitle-line"></div>
-            <h2>INDULGE IN EXQUISITE <span className="highlight">TASTE</span> WITH US</h2>
           </div>
         </div>
       </section>

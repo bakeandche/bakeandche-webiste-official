@@ -10,7 +10,7 @@ import { Auth } from './pages/Auth'
 import { Admin } from './pages/Admin'
 import { Layout } from './components/layout/Layout'
 import { RequireAuth } from './components/common/RequireAuth'
-import { AuthProvider } from './hooks/useAuth'
+import { AuthProvider } from './hooks/useAuth.jsx'
 import './styles/App.css'
 
 function App() {

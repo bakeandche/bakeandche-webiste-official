@@ -519,9 +519,9 @@ h6 {
   background: #edb956;
   color: #2c2c2c;
   border: none;
-  padding: 0.3rem 0.8rem;
-  border-radius: 20px;
-  font-weight: 500;
+  padding: 1rem 1.5rem;
+  border-radius: 50px;
+  font-weight: 600;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -530,7 +530,7 @@ h6 {
   font-size: 1rem;
   position: relative;
   overflow: hidden;
-  min-height: 2.5rem;
+  box-shadow: 0 4px 20px rgba(237, 185, 86, 0.3);
 }
 
 .join-btn::before {
@@ -554,7 +554,8 @@ h6 {
 
 .join-btn:hover {
   background: #d4a847;
-  transform: translateY(-2px);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 25px rgba(237, 185, 86, 0.4);
 }
 
 /* Floating Order Now Button */
@@ -599,7 +600,7 @@ h6 {
 /* Responsive Buttons */
 @media (max-width: 768px) {
   .join-btn {
-    padding: 0.3rem 0.7rem;
+    padding: 0.8rem 1.2rem;
     font-size: 0.95rem;
   }
   
@@ -613,7 +614,7 @@ h6 {
 
 @media (max-width: 480px) {
   .join-btn {
-    padding: 0.3rem 0.6rem;
+    padding: 0.7rem 1rem;
     font-size: 0.9rem;
   }
   

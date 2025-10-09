@@ -1,5 +1,5 @@
-import { useState, useEffect, useRef } from 'react'
-import { Search, MapPin, Clock, Phone, Truck, Coffee, X, RotateCcw } from 'lucide-react'
+import { useState, useEffect, useRef, useCallback } from 'react'
+import { Search, MapPin, Clock, Phone, X, RotateCcw } from 'lucide-react'
 // Database import removed for local mode
 import { calculateDistance, formatDistance } from '../../constants/stores'
 import mapboxgl from 'mapbox-gl'
@@ -175,10 +175,10 @@ export function StoreLocator() {
         map.current = null
       }
     }
-  }, [])
+  }, [addStoreMarkers])
 
   // Add store markers to map
-  const addStoreMarkers = () => {
+  const addStoreMarkers = useCallback(() => {
     console.log('Adding store markers...')
     if (!map.current) {
       console.log('No map instance available for markers')
@@ -262,7 +262,7 @@ export function StoreLocator() {
     })
     
     console.log('Markers added successfully:', markers.current.length)
-  }
+  }, [])
 
   // Load store locations - using static data for local mode
   useEffect(() => {

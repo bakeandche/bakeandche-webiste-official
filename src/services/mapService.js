@@ -34,7 +34,7 @@ export const initializeMap = (container, token, options = {}) => {
 export const addStoreMarkers = (map, stores, onStoreSelect) => {
   const markers = []
   
-  stores.forEach((store, index) => {
+  stores.forEach((store) => {
     const [lng, lat] = store.coordinates
     
     // Create custom marker element

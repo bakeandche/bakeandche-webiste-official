@@ -15,13 +15,18 @@ export function Home() {
             playsInline
             poster="/images/video-poster.jpg"
           >
-            <source src="/videos/0925 BC BRANDING - TV Video.mp4" type="video/mp4" />
+            <source src="https://rnxjrnfexvstqmfqjzky.supabase.co/storage/v1/object/public/videos/0_City_Urban_3840x2160.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
           <div className="video-overlay-dark"></div>
         </div>
         <div className="video-content">
           <div className="container">
+          </div>
+          <div className="video-slogan">
+            <div className="slogan-content">
+              <h3 className="slogan-text">EXPERIENCE A MODERN TWIST ON VIETNAMESE DESSERT</h3>
+            </div>
           </div>
         </div>
       </section>

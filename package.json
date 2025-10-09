@@ -16,10 +16,12 @@
     "save": "node quick-save.js",
     "smart": "node smart-commit.js",
     "commit": "node auto-commit.js",
-    "vercel-build": "npm run build"
+    "vercel-build": "npm run build",
+    "upload-videos": "node upload-videos-to-storage.js"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.58.0",
+    "dotenv": "^17.2.3",
     "lucide-react": "^0.294.0",
     "mapbox-gl": "^3.14.0",
     "react": "^18.2.0",

@@ -9,7 +9,7 @@ import { Contact } from './pages/Contact.jsx'
 import { Auth } from './pages/Auth.jsx'
 import { Admin } from './pages/Admin.jsx'
 import { Layout } from './components/layout/Layout'
-import { RequireAuth } from './components/common/RequireAuth'
+// import { RequireAuth } from './components/common/RequireAuth'
 import './styles/App.css'
 
 function App() {

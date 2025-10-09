@@ -1,6 +1,6 @@
 import { Hero } from '../components/features/Hero'
 import { Features } from '../components/features/Features'
-import { Star, Clock, Heart, Award, ArrowRight, ShoppingCart, Smartphone, Download } from 'lucide-react'
+import { ShoppingCart, Smartphone, Download } from 'lucide-react'
 
 export function Home() {
   return (
